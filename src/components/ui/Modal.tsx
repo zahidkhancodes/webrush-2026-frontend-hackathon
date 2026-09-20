@@ -87,7 +87,7 @@ export const Modal: React.FC<Props> = ({ isOpen, onClose, title, children }) => 
   if (!isOpen) return null;
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
+    <div className="modal-overlay" onClick={onClose} role="presentation" onKeyDown={onClose}>
       <div
         ref={dialogRef}
         className="modal-content"
@@ -95,6 +95,7 @@ export const Modal: React.FC<Props> = ({ isOpen, onClose, title, children }) => 
         aria-modal="true"
         aria-labelledby="modal-title"
         onClick={(e) => e.stopPropagation()}
+        onKeyDown={(e) => e.stopPropagation()}
       >
         <div className="modal-header">
           <h3 id="modal-title" className="modal-title">{title}</h3>

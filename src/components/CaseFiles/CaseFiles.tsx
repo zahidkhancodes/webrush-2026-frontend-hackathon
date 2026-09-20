@@ -4,7 +4,7 @@
  * Each chapter can expand to show actual receipts from that time period.
  * Uses framer-motion for scroll-triggered animations.
  */
-import React, { useState, useRef, useCallback, useEffect } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { loadYear } from '../../lib/data-loader';
 import type { Receipt } from '../../types';
@@ -65,9 +65,8 @@ const CHAPTERS = [
  * Individual chapter card with scroll-triggered reveal animation
  * and expandable evidence drawer showing receipts from that era.
  */
-const ChapterCard: React.FC<{ chapter: typeof CHAPTERS[number]; index: number }> = ({
+const ChapterCard: React.FC<{ chapter: typeof CHAPTERS[number] }> = ({
   chapter,
-  index,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [expanded, setExpanded] = useState(false);
@@ -227,8 +226,8 @@ export const CaseFiles: React.FC = () => {
 
       {/* Timeline */}
       <div className="timeline">
-        {CHAPTERS.map((chapter, i) => (
-          <ChapterCard key={chapter.id} chapter={chapter} index={i} />
+        {CHAPTERS.map((chapter) => (
+          <ChapterCard key={chapter.id} chapter={chapter} />
         ))}
       </div>
 

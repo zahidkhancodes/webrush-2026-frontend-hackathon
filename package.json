@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "build:data": "node --experimental-strip-types scripts/build-data.ts"
+    "build:data": "node --experimental-strip-types scripts/build-data.ts",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@tanstack/react-virtual": "^3.10.8",
@@ -19,13 +22,25 @@
     "zustand": "^4.5.5"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
     "@types/d3-force": "^3.0.10",
     "@types/node": "^22.5.5",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "csv-parse": "^5.5.6",
+    "eslint": "^9.39.5",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "jsdom": "^30.1.0",
+    "prettier": "^3.9.8",
     "typescript": "^5.5.3",
-    "vite": "^5.4.1"
+    "typescript-eslint": "^8.70.0",
+    "vite": "^5.4.1",
+    "vitest": "^2.1.9"
   }
 }

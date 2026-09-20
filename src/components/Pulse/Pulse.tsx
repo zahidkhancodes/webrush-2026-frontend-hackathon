@@ -149,7 +149,7 @@ export const Pulse: React.FC = () => {
         aria-label={`Activity density ribbon showing ${visibleData.length} days of data`}
       >
         <div className="density-ribbon" style={{ height: '160px' }}>
-          {visibleData.map((d, i) => {
+          {visibleData.map((d) => {
             const h = Math.max(2, (d.plays / maxPlays) * 100);
             const hasPurchase = d.types.includes('purchase');
             return (
@@ -167,7 +167,6 @@ export const Pulse: React.FC = () => {
                 onMouseLeave={() => handleBarHover(null)}
                 onFocus={() => handleBarHover(d)}
                 onBlur={() => handleBarHover(null)}
-                tabIndex={0}
                 role="listitem"
                 aria-label={`${d.date}: ${d.plays} plays`}
               />

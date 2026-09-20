@@ -10,7 +10,8 @@
 :root {
   /* Palette */
   --paper:   #E9E5DA;
-  --paper-2: #DCD7C9;
+  --paper-2: rgba(220, 215, 201, 0.4);
+  --paper-glass: rgba(233, 229, 218, 0.65);
   --ink:     #1B1A17;
   --faded:   #8A857A;
   --stamp:   #5B2E8C;
@@ -19,6 +20,11 @@
   --night:   #14131A;
   --danger:  #C0392B;
   --success: #27AE60;
+
+  /* Glassmorphism settings */
+  --glass-border: 1px solid rgba(255, 255, 255, 0.4);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  --glass-blur: blur(8px);
 
   /* Spacing scale (4px base) */
   --spacing-1: 0.25rem;
@@ -84,6 +90,10 @@ html {
 
 body {
   background-color: var(--paper);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(232, 197, 71, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(91, 46, 140, 0.1) 0px, transparent 50%);
+  background-attachment: fixed;
   color: var(--ink);
   font-family: var(--font-mono);
   font-size: var(--fs-base);
@@ -363,9 +373,13 @@ button {
   }
 }
 
-/* ---------- Thermal Receipt Styling ---------- */
+/* ---------- Thermal Receipt Styling (Glassmorphism) ---------- */
 .receipt-slip {
-  background: var(--paper-2);
+  background: var(--paper-glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
   padding: var(--spacing-4);
   position: relative;
   margin-bottom: var(--spacing-3);
@@ -502,8 +516,10 @@ button {
   width: 100%;
   padding: var(--spacing-3) var(--spacing-4);
   padding-left: var(--spacing-10);
-  background: var(--paper-2);
-  border: 1px solid transparent;
+  background: var(--paper-glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: var(--radius-md);
   color: var(--ink);
   font-family: var(--font-mono);
@@ -551,7 +567,11 @@ button {
 }
 
 .stat-card {
-  background: var(--paper-2);
+  background: var(--paper-glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
   padding: var(--spacing-4);
   border-radius: var(--radius-md);
   display: flex;
@@ -587,9 +607,12 @@ button {
 }
 
 .modal-content {
-  background: var(--paper);
+  background: rgba(233, 229, 218, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: var(--glass-border);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
   width: 100%;
   max-width: 560px;
   max-height: 85vh;
@@ -605,7 +628,7 @@ button {
   border-bottom: 1px solid var(--paper-2);
   position: sticky;
   top: 0;
-  background: var(--paper);
+  background: transparent;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 

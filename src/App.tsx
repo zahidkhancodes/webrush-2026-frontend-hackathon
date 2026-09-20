@@ -45,6 +45,7 @@ function App() {
 
   // Close mobile nav when switching to desktop
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (!isMobile) setNavOpen(false);
   }, [isMobile]);
 

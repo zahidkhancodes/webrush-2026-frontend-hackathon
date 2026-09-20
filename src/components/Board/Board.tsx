@@ -6,7 +6,6 @@
 import React, { useEffect, useRef, useState, useCallback, useMemo } from 'react';
 import * as d3 from 'd3-force';
 import { LoadingSpinner } from '../ui/LoadingSpinner';
-import { useIsMobile } from '../../hooks/useMediaQuery';
 import type { Edge } from '../../types';
 
 interface GraphNode extends d3.SimulationNodeDatum {
@@ -32,13 +31,13 @@ export const Board: React.FC = () => {
   const [nodes, setNodes] = useState<GraphNode[]>([]);
   const [links, setLinks] = useState<GraphLink[]>([]);
   const [loading, setLoading] = useState(true);
-  const isMobile = useIsMobile();
   const [viewAsList, setViewAsList] = useState(false);
 
-  // Default to list on mobile
+  // Removed default to list on mobile to preserve interactive functionality
   useEffect(() => {
-    setViewAsList(isMobile);
-  }, [isMobile]);
+    // Optionally we can initialize with list view based on some other condition, 
+    // but for now, we want the canvas graph to render on mobile.
+  }, []);
 
   useEffect(() => {
     fetch('/data/edges.json')

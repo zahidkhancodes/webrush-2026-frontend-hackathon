@@ -145,6 +145,7 @@ export const Spool: React.FC = () => {
   const [selectedReceipt, setSelectedReceipt] = useState<Receipt | null>(null);
   const parentRef = useRef<HTMLDivElement>(null);
 
+  // eslint-disable-next-line react-hooks/incompatible-library
   const rowVirtualizer = useVirtualizer({
     count: filtered.length,
     getScrollElement: () => parentRef.current,
