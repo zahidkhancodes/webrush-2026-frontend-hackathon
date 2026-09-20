@@ -2,17 +2,37 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Paper Trail</title>
-    <meta name="description" content="Your Life, In Receipts. A digital case file of 152,000 moments." />
-    
-    <!-- Preload fonts to avoid layout shift -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=IBM+Plex+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <!-- SEO -->
+    <title>Paper Trail — Your Life, In Receipts 🧾</title>
+    <meta name="description" content="An interactive data story visualising 152,000+ digital life receipts spanning 12 years of Spotify plays and household transactions. Built for WebRush 2026." />
+    <meta name="author" content="Zahid Khan" />
+    <meta name="theme-color" content="#E9E5DA" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Paper Trail — Your Life, In Receipts 🧾" />
+    <meta property="og:description" content="An interactive data story visualising 152,000+ digital life receipts spanning 12 years of Spotify plays and household transactions." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_IN" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Paper Trail — Your Life, In Receipts 🧾" />
+    <meta name="twitter:description" content="152,000+ digital life receipts. 12 years. One interactive story." />
+
+    <!-- Performance: Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=IBM+Plex+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet" />
+
+    <!-- Inline critical favicon (data URI — no extra HTTP request) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧾</text></svg>" />
   </head>
   <body>
-    <a href="#main-content" class="skip-link">Skip to content</a>
+    <!-- Accessibility: Skip navigation link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

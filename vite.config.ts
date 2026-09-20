@@ -12,15 +12,22 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  css: {
+    devSourcemap: true,
+  },
   build: {
     target: 'esnext',
+    sourcemap: true,
+    cssMinify: true,
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom', 'framer-motion', 'zustand'],
-          data: ['d3-force', 'minisearch', '@tanstack/react-virtual']
-        }
-      }
-    }
-  }
+          vendor: ['react', 'react-dom'],
+          animation: ['framer-motion'],
+          state: ['zustand'],
+          data: ['d3-force', '@tanstack/react-virtual'],
+        },
+      },
+    },
+  },
 });
