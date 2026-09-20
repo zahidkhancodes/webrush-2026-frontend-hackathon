@@ -1,0 +1,31 @@
+{
+  "name": "paper-trail",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "build:data": "node --experimental-strip-types scripts/build-data.ts"
+  },
+  "dependencies": {
+    "@tanstack/react-virtual": "^3.10.8",
+    "d3-force": "^3.0.0",
+    "framer-motion": "^11.5.4",
+    "minisearch": "^7.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^4.5.5"
+  },
+  "devDependencies": {
+    "@types/d3-force": "^3.0.10",
+    "@types/node": "^22.5.5",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "csv-parse": "^5.5.6",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1"
+  }
+}
